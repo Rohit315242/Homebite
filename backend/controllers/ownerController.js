@@ -1,9 +1,9 @@
 const Owner = require("../models/Owner");
 const jwt = require("jsonwebtoken");
 
-// ======================================
+
 // REGISTER OWNER
-// ======================================
+
 
 exports.register = async (req, res) => {
 
@@ -52,9 +52,9 @@ exports.register = async (req, res) => {
 
 };
 
-// ======================================
+
 // LOGIN OWNER
-// ======================================
+
 
 exports.login = async (req, res) => {
 
@@ -142,9 +142,9 @@ exports.login = async (req, res) => {
 
 };
 
-// ======================================
+
 // GET OWNER PROFILE
-// ======================================
+
 
 exports.getProfile = async (req, res) => {
 

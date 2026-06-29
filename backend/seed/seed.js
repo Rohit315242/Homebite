@@ -65,7 +65,7 @@ async function createMenu(messId, foodType) {
     dinnerDish = randomItem(nonVegDinnerMenus);
   }
 
-  // 0 = Lunch
+ 
   if (option === 0) {
 
     await Menu.create({
@@ -124,7 +124,7 @@ async function startSeed() {
   try {
     await connectDB();
 
-    // Clear old data
+    
     await Menu.deleteMany({});
     await Mess.deleteMany({});
     await Owner.deleteMany({});

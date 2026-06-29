@@ -15,7 +15,7 @@ function AttendanceCalendar() {
   const totalDays    = new Date(currentYear, currentMonth, 0).getDate();
   const monthName    = today.toLocaleString("default", { month: "long" });
 
-  // ── Load Attendance ───────────────────────────────────────
+  
   useEffect(() => { loadAttendance(); }, []);
 
   const loadAttendance = async () => {
@@ -37,7 +37,6 @@ function AttendanceCalendar() {
     }
   };
 
-  // ── Mark Attendance ───────────────────────────────────────
   const markAttendance = async () => {
     if (alreadyMarked || marking) return;
 
@@ -70,18 +69,18 @@ function AttendanceCalendar() {
     }
   };
 
-  // ── Stats ─────────────────────────────────────────────────
+  
   const presentCount = presentDays.size;
   const absentCount  = todayDate - presentCount;
   const percentage   = todayDate === 0
     ? 0
     : Math.round((presentCount / todayDate) * 100);
 
-  // ── Loading / Error ───────────────────────────────────────
+
   if (loading) return <div style={s.centerMsg}>Loading Attendance...</div>;
   if (error)   return <div style={{ ...s.centerMsg, color: "#ef4444" }}>{error}</div>;
 
-  // ── Render ────────────────────────────────────────────────
+ 
   return (
     <div style={s.wrapper}>
 
@@ -153,7 +152,7 @@ function AttendanceCalendar() {
   );
 }
 
-// ── Styles ────────────────────────────────────────────────────
+
 const s = {
   wrapper: {
     padding: "4px 0",

@@ -33,7 +33,7 @@ const reviewSchema = new mongoose.Schema(
   }
 );
 
-// One review per user per mess
+
 reviewSchema.index({ user: 1, mess: 1 }, { unique: true });
 
 module.exports = mongoose.model("Review", reviewSchema);

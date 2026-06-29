@@ -8,9 +8,9 @@ function OwnerReviews() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
 
-  // =====================================
+ 
   // Load Reviews
-  // =====================================
+ 
 
   useEffect(() => {
     loadReviews();
@@ -33,9 +33,9 @@ function OwnerReviews() {
     }
   };
 
-  // =====================================
+  
   // Search Reviews
-  // =====================================
+  
 
   const filteredReviews = reviews.filter((review) =>
     review.user?.name?.toLowerCase().includes(search.toLowerCase())

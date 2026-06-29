@@ -199,9 +199,9 @@ exports.getPayments = async (req, res) => {
 
   }
 };
-// ======================================
+
 // Owner Payments
-// ======================================
+
 
 exports.getOwnerPayments = async (req, res) => {
 
@@ -233,7 +233,7 @@ exports.getOwnerPayments = async (req, res) => {
 
       .populate("mess", "name")
 
-      .sort({ _id: -1 }) // ← newest top la
+      .sort({ _id: -1 }) 
 
     res.json(payments);
 

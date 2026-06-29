@@ -399,7 +399,7 @@ function ReviewModal({ messId, open, onClose }) {
             </div>
           </div>
 
-          </div>{/* end rm-body */}
+          </div>
         </div>
       </div>
     </>),

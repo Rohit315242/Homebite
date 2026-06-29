@@ -268,7 +268,7 @@ function MessCard({ mess }) {
 
       <div className="mc-card">
 
-        {/* Top — icon removed, name starts directly */}
+   
         <div className="mc-top">
           <div className="mc-info">
             <div className="mc-name">{mess.name}</div>

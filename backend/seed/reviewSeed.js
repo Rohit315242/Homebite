@@ -40,7 +40,7 @@ async function seedReviews() {
         for (const sub of subscriptions) {
 
       const rating = Math.floor(Math.random() * 2) + 4;
-      // Rating will be 4 or 5
+      
 
       const comment =
         comments[Math.floor(Math.random() * comments.length)];
@@ -61,7 +61,7 @@ async function seedReviews() {
 
       } catch (err) {
 
-        // Ignore duplicate review errors
+      
         console.log(
           `⚠ Review already exists for ${sub.user.name}`
         );

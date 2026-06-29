@@ -2,9 +2,8 @@ const Attendance = require("../models/Attendance");
 const Subscription = require("../models/Subscription");
 const Mess = require("../models/Mess");
 
-// =====================================
 // Mark Today's Attendance
-// =====================================
+
 
 exports.markAttendance = async (req, res) => {
 
@@ -69,38 +68,36 @@ exports.markAttendance = async (req, res) => {
 
 };
 
-// =====================================
-// Logged-in User Attendance
-// =====================================
+
 
 exports.getMyAttendance = async (req, res) => {
 
   try {
 
-    // ← FIX: active subscription fetch kar — startDate milel
+    
     const subscriptions = await Subscription.find({
       user: req.user.id,
       status: "active",
     });
 
-    // messId → startDate map banav
+   
     const startDateMap = {};
     subscriptions.forEach(sub => {
       startDateMap[sub.mess.toString()] = sub.startDate || sub.createdAt;
     });
 
-    // Sagli attendance fetch kar
+   
     const allAttendance = await Attendance.find({
       user: req.user.id,
     })
       .populate("mess", "name location")
       .sort({ date: -1 });
 
-    // ← FIX: fakt startDate nantarchi attendance filter kar
+   
     const attendance = allAttendance.filter(a => {
       const messId = a.mess?._id?.toString();
       const startDate = startDateMap[messId];
-      if (!startDate) return false; // no active sub = show nako
+      if (!startDate) return false; 
       return new Date(a.date) >= new Date(startDate);
     });
 
@@ -118,9 +115,9 @@ exports.getMyAttendance = async (req, res) => {
 
 };
 
-// =====================================
+
 // Check Today's Attendance
-// =====================================
+
 
 exports.checkTodayAttendance = async (req, res) => {
 
@@ -150,9 +147,9 @@ exports.checkTodayAttendance = async (req, res) => {
 
 };
 
-// =====================================
+
 // Owner Dashboard Attendance
-// =====================================
+
 
 exports.getOwnerAttendance = async (req, res) => {
 
@@ -190,9 +187,9 @@ exports.getOwnerAttendance = async (req, res) => {
 
 };
 
-// =====================================
+
 // Owner Members Details
-// =====================================
+
 
 exports.getOwnerMembers = async (req, res) => {
 
@@ -217,13 +214,13 @@ exports.getOwnerMembers = async (req, res) => {
 
     for (const sub of subscriptions) {
 
-      // ← FIX: fakt startDate nantarchi attendance count kar
+      
       const startDate = sub.startDate || sub.createdAt;
 
       const attendance = await Attendance.find({
         user: sub.user._id,
         mess: mess._id,
-        date: { $gte: startDate }, // ← FIX: junya attendance ignore
+        date: { $gte: startDate }, 
       }).sort({ date: -1 });
 
       const attendanceDays = attendance.length;

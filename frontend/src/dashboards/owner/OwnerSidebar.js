@@ -16,13 +16,11 @@ function OwnerSidebar() {
   const [owner, setOwner] = useState({ name: "", email: "" });
   const navigate = useNavigate();
 
-  // ── Fetch owner profile ───────────────────────────────────
+  
   useEffect(() => {
     const fetchOwner = async () => {
       try {
-        // TODO: uncomment when backend ready
-        // const res = await api.get("/owner/me");
-        // setOwner({ name: res.data.name, email: res.data.email });
+       
       } catch (err) {
         console.error("Failed to fetch owner profile:", err);
       }

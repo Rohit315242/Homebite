@@ -159,7 +159,7 @@ function Payments() {
   );
 }
 
-// ── Design tokens (matches dashboard dark theme) ──────────────
+
 const T = {
   bg:     "#0D0D1F",
   card:   "#13132A",

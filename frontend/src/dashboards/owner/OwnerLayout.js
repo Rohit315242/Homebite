@@ -13,10 +13,10 @@ function OwnerLayout() {
   return (
     <div style={s.shell}>
 
-      {/* Sidebar */}
+     
       <OwnerSidebar />
 
-      {/* Main Content */}
+      
       <div style={s.main}>
         <Routes>
           <Route index                    element={<OwnerHome />}     />

@@ -33,7 +33,7 @@ function Login() {
   return (
     <div style={s.page}>
 
-      {/* Background decoration */}
+      
       <div style={s.bgCircle1} />
       <div style={s.bgCircle2} />
 

@@ -32,7 +32,7 @@ const attendanceSchema = new mongoose.Schema({
 
 });
 
-// One Attendance Per User Per Day Per Mess
+
 attendanceSchema.index(
   {
     user: 1,

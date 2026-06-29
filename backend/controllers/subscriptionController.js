@@ -20,7 +20,7 @@ exports.subscribe = async (req, res) => {
         if (sub) {
 
             sub.status = "active";
-            sub.startDate = new Date(); // ← FIX 1: re-subscribe la startDate reset
+            sub.startDate = new Date(); 
             await sub.save();
 
             return res.json(sub);
@@ -37,7 +37,7 @@ exports.subscribe = async (req, res) => {
 
             status: "active",
 
-            startDate: new Date(), // ← FIX 1: navin subscription la startDate set
+            startDate: new Date(), 
 
         });
 
@@ -56,7 +56,7 @@ exports.subscribe = async (req, res) => {
 };
 
 
-// Cancel
+
 
 
 exports.cancelSubscription = async (req, res) => {
@@ -106,7 +106,7 @@ exports.getUserSubscriptions = async (req, res) => {
 
             user: req.user.id,
 
-            status: "active", // ← FIX 2: fakt active subscriptions return kar
+            status: "active", 
 
         }).populate("mess");
 

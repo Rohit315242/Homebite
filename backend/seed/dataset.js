@@ -1,8 +1,6 @@
 module.exports = [
 
-  // ==========================
-  // Pune - Katraj
-  // ==========================
+  
 
   {
     city: "Pune",
@@ -35,10 +33,7 @@ module.exports = [
     foodType: "Non-Veg",
   },
 
-  // ==========================
-  // Pune - Ambegaon
-  // ==========================
-
+  
   {
     city: "Pune",
     area: "Ambegaon",
@@ -70,9 +65,7 @@ module.exports = [
     foodType: "Non-Veg",
   },
 
-  // ==========================
-  // Pune - Narhe
-  // ==========================
+  
 
   {
     city: "Pune",
@@ -104,9 +97,7 @@ module.exports = [
     mess: "Maa Annapurna",
     foodType: "Non-Veg",
   },
-  // ==========================
-  // Pune - Warje
-  // ==========================
+  
 
   {
     city: "Pune",
@@ -139,10 +130,7 @@ module.exports = [
     foodType: "Non-Veg",
   },
 
-  // ==========================
-  // Pune - Kothrud
-  // ==========================
-
+ 
   {
     city: "Pune",
     area: "Kothrud",

@@ -18,7 +18,7 @@ function OwnerDashboard() {
       <Route path="payments" element={<Payments />} />
       <Route path="analytics" element={<Analytics />} />
 
-      {/* ✅ Fixed */}
+      
       <Route
         path="reviews"
         element={<OwnerReviews />}

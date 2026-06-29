@@ -162,7 +162,7 @@ function Members() {
   );
 }
 
-// ── Design tokens (matches dashboard dark theme) ──────────────
+
 const T = {
   bg:     "#0D0D1F",
   card:   "#13132A",
@@ -335,7 +335,7 @@ const s = {
     border: "1px solid rgba(248,113,113,0.2)",
   },
 
-  /* Empty state */
+ 
   empty: {
     display: "flex", flexDirection: "column",
     alignItems: "center", padding: "52px 20px", gap: 6,
