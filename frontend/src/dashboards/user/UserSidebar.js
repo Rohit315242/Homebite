@@ -16,14 +16,19 @@ function UserSidebar() {
         const token = localStorage.getItem("token");
         const headers = { Authorization: `Bearer ${token}` };
 
-        const profileRes = await fetch("http://localhost:5000/api/user/me", { headers });
-        const profileData = await profileRes.json();
-        setUser({
-          name: profileData?.name || "User",
-          email: profileData?.email || "",
-        });
+       const profileRes = await fetch(
+  "https://homebite-backend-lnkr.onrender.com/api/user/me",
+  { headers }
+);
 
-        const subRes = await fetch("http://localhost:5000/api/subscriptions/my", { headers });
+const profileData = await profileRes.json();
+
+setUser({
+  name: profileData?.name || "User",
+  email: profileData?.email || "",
+});
+
+        const subRes = await fetch("https://homebite-backend-lnkr.onrender.com/api/user/me", { headers });
         const subData = await subRes.json();
         setIsSubscribed(subData.length > 0);
       } catch (err) {
