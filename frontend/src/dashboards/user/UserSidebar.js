@@ -28,9 +28,14 @@ setUser({
   email: profileData?.email || "",
 });
 
-        const subRes = await fetch("https://homebite-backend-lnkr.onrender.com/api/user/me", { headers });
-        const subData = await subRes.json();
-        setIsSubscribed(subData.length > 0);
+        const subRes = await fetch(
+  "https://homebite-backend-lnkr.onrender.com/api/subscriptions/my",
+  { headers }
+);
+
+const subData = await subRes.json();
+
+setIsSubscribed(subData.length > 0);
       } catch (err) {
         console.log(err);
       } finally {
